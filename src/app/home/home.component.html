@@ -1,0 +1,48 @@
+<div class="loginBox">
+    <div id="formContent">
+      <h1>Confirm if this is correct.</h1>
+      <hr>
+      <br>
+      <table style="width:60%">
+        <tr>
+          <th></th>
+          <th></th>
+        </tr>
+  
+        <tr>
+          ID : {{user.ID}}
+        </tr>
+  
+        <tr>
+          FirstName : {{user.name}} 
+        </tr>
+  
+        <tr>
+          Lastname : {{user.lastname}}
+        </tr>
+
+        <tr>
+          Gender : {{user.gender}}
+        </tr>
+  
+        <!--
+        <tr>
+          Address : {{user.address}}
+        </tr>
+  
+        <tr>
+          History : {{user.history}}
+        </tr>-->
+
+      </table>
+  
+    </div>
+   
+  </div>
+  
+
+  <div class="button">
+      <button mat-button class="button button1" (click)= "UnCorrec()">Incorrect</button>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <button mat-button class="button button2" (click)= "Correc()">Correct</button>
+  </div>

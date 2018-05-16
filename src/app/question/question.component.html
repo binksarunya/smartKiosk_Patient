@@ -1,0 +1,29 @@
+<!--<div class="background">-->
+<!--
+  <div class="Btn">
+    <mat-card class="cardBox">
+      <h1 class="w3-jumbo">
+        <span class="w3-hide-small">{{number}}.</span>{{showquestion}}</h1>
+      <mat-radio-group class="radio-group" [(ngModel)]="patientanswer" required>
+        <mat-radio-button class="radio-button" *ngFor="let answer2 of answer" [value]="answer2" (click)="click()">
+          {{answer2.answer}}
+        </mat-radio-button>
+      </mat-radio-group>
+    </mat-card>
+    <button mat-raised-button (click)="nextquestion()" disabled="{{btnlock}}">next question</button>
+  </div>-->
+
+<div class="loginBox">
+  <div id="formContent">
+    <h1>{{number}}. &nbsp;{{showquestion}}</h1>
+    <hr>
+    <br>
+    <mat-radio-group class="radio-group" [(ngModel)]="patientanswer" required>
+      <mat-radio-button class="radio-button" *ngFor="let answer2 of answer" [value]="answer2" (click)="click()">
+        {{answer2.answer}}
+      </mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <!-- {{patientanswer.answer}} -->
+  <button class="buttonNext" mat-raised-button (click)="nextquestion()" disabled="{{btnlock}}">next question</button>
+</div>

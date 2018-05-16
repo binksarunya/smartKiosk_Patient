@@ -1,0 +1,24 @@
+.col-md-8 {
+  text-align: -webkit-center;
+  text-align: -moz-center;
+  font-family: 'Kanit';
+  font-size: 20px;
+}
+
+.col-md-4 { 
+  font-family: 'Kanit';
+  font-size: 20px;
+}
+
+.row {
+   margin-top: 2%;
+}
+
+img {
+    width: 26%;
+}
+
+.btn {
+  font-size: 20px;
+}
+
