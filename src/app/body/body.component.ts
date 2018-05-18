@@ -58,7 +58,7 @@ export class BodyComponent implements OnInit {
     //console.log(event.type);
     if (event.type == "mouseenter") {
       //console.log("enter");
-      this.img = "assets/pictures/Head.png"
+      this.img = "assets/pictures/HeadNew.png"
     } else {
       this.img = "assets/pictures/bodyFront_1.png";
     }
@@ -69,7 +69,7 @@ export class BodyComponent implements OnInit {
   }
   neck(event: MouseEvent) {
     if (event.type == "mouseenter") {
-      this.img = "assets/pictures/Neck.png"
+      this.img = "assets/pictures/NeckNew.png"
     } else {
       this.img = "assets/pictures/bodyFront_1.png";
     }
@@ -80,7 +80,7 @@ export class BodyComponent implements OnInit {
   }
   chest(event: MouseEvent) {
     if (event.type == "mouseenter") {
-      this.img = "assets/pictures/Chest.png"
+      this.img = "assets/pictures/ChestNew.png"
     } else {
       this.img = "assets/pictures/bodyFront_1.png";
     }
@@ -91,7 +91,7 @@ export class BodyComponent implements OnInit {
   }
   abdomen(event: MouseEvent) {
     if (event.type == "mouseenter") {
-      this.img = "assets/pictures/Abdomen.png"
+      this.img = "assets/pictures/AbdomenNew.png"
     } else {
       this.img = "assets/pictures/bodyFront_1.png";
     }
@@ -102,7 +102,7 @@ export class BodyComponent implements OnInit {
   }
   panis(event: MouseEvent) {
     if (event.type == "mouseenter") {
-      this.img = "assets/pictures/Penis.png"
+      this.img = "assets/pictures/PenisNew.png"
     } else {
       this.img = "assets/pictures/bodyFront_1.png";
     }
@@ -113,7 +113,7 @@ export class BodyComponent implements OnInit {
   }
   legtop(event: MouseEvent) {
     if (event.type == "mouseenter") {
-      this.img = "assets/pictures/Thigh.png"
+      this.img = "assets/pictures/ThighNew.png"
     } else {
       this.img = "assets/pictures/bodyFront_1.png";
     }
@@ -124,7 +124,7 @@ export class BodyComponent implements OnInit {
   }
   knee(event: MouseEvent) {
     if (event.type == "mouseenter") {
-      this.img = "assets/pictures/Knee.png"
+      this.img = "assets/pictures/KneeNew.png"
     } else {
       this.img = "assets/pictures/bodyFront_1.png";
     }
@@ -135,7 +135,7 @@ export class BodyComponent implements OnInit {
   }
   shin(event: MouseEvent) {
     if (event.type == "mouseenter") {
-      this.img = "assets/pictures/Shin.png"
+      this.img = "assets/pictures/ShinNew.png"
     } else {
       this.img = "assets/pictures/bodyFront_1.png";
     }
@@ -146,7 +146,7 @@ export class BodyComponent implements OnInit {
   }
   foot(event: MouseEvent) {
     if (event.type == "mouseenter") {
-      this.img = "assets/pictures/Foot.png"
+      this.img = "assets/pictures/FootNew.png"
     } else {
       this.img = "assets/pictures/bodyFront_1.png";
     }
@@ -157,7 +157,7 @@ export class BodyComponent implements OnInit {
   }
   upperarm(event: MouseEvent) {
     if (event.type == "mouseenter") {
-      this.img = "assets/pictures/upperArm.png"
+      this.img = "assets/pictures/upperArmNew.png"
     } else {
       this.img = "assets/pictures/bodyFront_1.png";
     }
@@ -168,7 +168,7 @@ export class BodyComponent implements OnInit {
   }
   arm(event: MouseEvent) {
     if (event.type == "mouseenter") {
-      this.img = "assets/pictures/Arm.png"
+      this.img = "assets/pictures/ArmNew.png"
     } else {
       this.img = "assets/pictures/bodyFront_1.png";
     }
@@ -179,7 +179,7 @@ export class BodyComponent implements OnInit {
   }
   hand(event: MouseEvent) {
     if (event.type == "mouseenter") {
-      this.img = "assets/pictures/hand.png"
+      this.img = "assets/pictures/HandNew.png"
     } else {
       this.img = "assets/pictures/bodyFront_1.png";
     }
