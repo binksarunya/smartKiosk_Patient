@@ -18,15 +18,15 @@
      margin: 0;
      padding: 0 0 20px;
      color: #262626;
-     font-family: 'Kanit';
+     font-family: 'Prompt';
      text-align: center;
-     font-size: 50px;
+     font-size: 30px;
  }
  tr {
    margin: 0;
    padding: 0 0 20px;
    color: #262626;
-   font-family: 'Kanit';
+   font-family: 'Prompt';
    font-size: 30px;
  }
  
@@ -46,18 +46,17 @@
    }
  
 
-   #formContent {
+   /*#formContent {
      -webkit-border-radius: 10px 10px 10px 10px;
      border-radius: 10px 10px 10px 10px;
      background: #fff;
-     padding: 60px;
+     padding: 10px;
      width: 100%;
-     max-width: 800px;
      position: relative;
     /* -webkit-box-shadow: 0 10px 30px 0 rgba(0,0,0,0.3);
-     box-shadow: 0 15px 25px 0 rgba(0,0,0,0.3);*/
+     box-shadow: 0 15px 25px 0 rgba(0,0,0,0.3);*
     
-   }
+   }*/
    
    /*button*/
  
@@ -97,4 +96,6 @@
    color: white;
  }
 
-   
+  .container {
+   margin-top: 50px;
+ }

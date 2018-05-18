@@ -37,8 +37,6 @@ import { AuthBodypartService } from './services/auth-bodypart.service';
 import { DiagnosisService } from './services/diagnosis.service';
 
 import { HomeComponent } from './home/home.component';
-import { NewPatientComponent } from './new-patient/new-patient.component';
-import { PatientListComponent } from './patient-list/patient-list.component';
 import { BodyComponent } from './body/body.component';
 import { QuestionComponent } from './question/question.component';
 import { FinishComponent } from './finish/finish.component';
@@ -52,8 +50,6 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     AppComponent,
     LoginComponent,
     HomeComponent,
-    NewPatientComponent,
-    PatientListComponent,
     BodyComponent,
     QuestionComponent,
     FinishComponent,

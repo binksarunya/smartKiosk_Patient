@@ -39,7 +39,7 @@ h2 {
     margin: 0;
     padding: 0 0 20px;
     color: #262626;
-    font-family: 'Kanit';
+    font-family: 'Prompt';
     text-align: center;
 }
 
@@ -110,7 +110,7 @@ h2 {
     text-decoration: none;
     text-align: center;
     display: block;
-    font-family: 'Kanit';
+    font-family: 'Prompt';
   }
   
   
@@ -118,7 +118,7 @@ h2 {
 .Footer {
   text-align: -webkit-center;
   text-align: -moz-center;
-  font-family: 'Kanit Light';
+  font-family: 'Prompt';
   font-size: 18px;
 }
   

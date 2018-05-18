@@ -1,32 +1,92 @@
-<div class="row">
-  <span class="col-md-8">please select your point</span>
-  <span class="col-md-4">your point</span>
-</div>
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="row">
-  <div class="col-md-8">
-    <img src={{img}} usemap="#image-map">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+
+<body>
+
+  <div class="row">
+    <span class="col-md-7"></span>
+    <span class="col-md-5"></span>
   </div>
-  <div class="col-md-4">
-    <div class="row" *ngFor="let part of bodypart">
-      <div class="col-md-4">
-        <li>{{part}}</li>
+
+  <div class="row">
+    <div class="col-md-7">
+      <div class="container">
+        <div class="panel panel-info">
+          <div class="panel-heading">Choose where you have symptoms</div>
+          <div class="panel-body">
+            <img src={{img}} usemap="#image-map">
+          </div>
+        </div>
       </div>
-      <div class="col-md-8">
-        <button type="button" class="btn btn-outline-info" (click)="delete(part)">x</button>
-      </div>
+      <!--<img src={{img}} usemap="#image-map">-->
     </div>
-    <br>
-    <div class="row">
-      <div class="col-md-4">
-        <button type="button" class="btn btn-danger" (click)="cancle()">cancle</button>   
+    <div class="col-md-5">
+      <div class="container2">
+        <div class="panel panel-info">
+          <div class="panel-heading">Your select</div>
+          <div class="panel-body">
+            <div class="row" *ngFor="let part of bodypart">
+              <div class="col-md-4">
+                <li class="bullet">{{part}}</li>
+                <!--<a  style="color:red" class="delete" (click)="delete(part)">delete</a>-->
+              </div>
+              <div class="col-md-8">
+                <!--<button type="button" class="btn btn-outline-info" (click)="delete(part)">x</button>-->
+                <a style="color:red" class="delete" (click)="delete(part)">delete</a>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-md-4">
+                <button type="button" class="btn btn-danger" (click)="cancle()">cancle</button>
+              </div>
+              <div class="col-md-8">
+                <button type="button" class="btn btn-success" (click)="ok()">ok</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col-md-8">
-        <button type="button" class="btn btn-primary" (click)="ok()">ok</button>
+
+
+
+      <!--
+      <div class="row" *ngFor="let part of bodypart">
+        <div class="col-md-4">
+          <li class="bullet">{{part}}</li>
+          <!--<a  style="color:red" class="delete" (click)="delete(part)">delete</a>--
+        </div>
+        <div class="col-md-8">
+          <!--<button type="button" class="btn btn-outline-info" (click)="delete(part)">x</button>--
+          <a style="color:red" class="delete" (click)="delete(part)">delete</a>
+        </div>
       </div>
+      <br>
+      <div class="row">
+        <div class="col-md-4">
+          <button type="button" class="btn btn-danger" (click)="cancle()">cancle</button>
+        </div>
+        <div class="col-md-8">
+          <button type="button" class="btn btn-primary" (click)="ok()">ok</button>
+        </div>
+
+      </div>-->
+
     </div>
   </div>
-</div>
+
+</body>
+
 
 <map name="image-map">
   <area target="" alt="head" title="head" coords="227,105,123,-1" shape="rect" (mouseenter)="head($event)" (mouseleave)="head($event)"
@@ -56,7 +116,7 @@
   <area target="" alt="footRight" title="footRight" coords="195,779,245,864" shape="rect" (mouseenter)="foot($event)" (mouseleave)="foot($event)"
     (click)="clickfoot('foot')">
   <area target="" alt="upperarmLeft" title="upperarmLeft" coords="91,146,52,158,56,328,92,334,100,301" shape="poly" (mouseenter)="upperarm($event)"
-    (click)="clickupperarm('upperarm')" (mouseleave)="upperarm($event)">
+    (click)="clickupperarm('upper arm')" (mouseleave)="upperarm($event)">
   <area target="" alt="upperarmRight" title="upperarmRight" coords="288,156,260,144,254,336,296,331,300,220" shape="poly" (mouseenter)="upperarm($event)"
     (click)="clickupperarm('upperarm')" (mouseleave)="upperarm($event)">
   <area target="" alt="armLeft" title="armLeft" coords="93,334,90,378,67,453,37,442,44,401,44,364,55,328" shape="poly" (mouseenter)="arm($event)"

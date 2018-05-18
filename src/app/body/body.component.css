@@ -1,13 +1,19 @@
-.col-md-8 {
+.col-md-7 {
   text-align: -webkit-center;
   text-align: -moz-center;
-  font-family: 'Kanit';
+  /*text-align: right;*/
+  font-family: 'Prompt';
   font-size: 20px;
 }
 
-.col-md-4 { 
-  font-family: 'Kanit';
-  font-size: 20px;
+.col-md-5 { 
+  text-align: left;
+  font-family: 'Prompt';
+  font-size: 18px; 
+}
+
+.col-md-8 {
+  text-align: right;
 }
 
 .row {
@@ -15,10 +21,47 @@
 }
 
 img {
-    width: 26%;
+    width: 28%;
 }
 
 .btn {
   font-size: 20px;
 }
+
+li.bullet {
+  list-style-type: none;
+  background-color: rgb(24, 129, 221);
+  padding: 6px 20px 6px 20px;
+  border-radius: 20px;
+  color: white;
+  position: relative;
+
+  /*display: inline-block;*/
+    
+}
+
+.delete {
+  cursor: pointer;
+  font-size: 13px;
+}
+
+/*body {
+  background: #A3E4D7  ;
+}*/
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  /*position: relative;*/
+}
+
+.container2 {
+  width: 100%;
+  max-width: 500px;
+}
+
+.panel-body {
+  background-color: #EBF5FB;
+}
+
 

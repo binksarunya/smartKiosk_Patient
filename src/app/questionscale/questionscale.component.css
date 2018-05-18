@@ -12,7 +12,7 @@
   h4,
   h5,
   h6 {
-      font-family: 'Kanit';
+      font-family: 'Prompt';
   }
   
   .w3-row-padding img {
@@ -50,7 +50,7 @@
   
   .radio-button {
     margin: 5px;
-     font-family: 'Kanit';
+     font-family: 'Prompt';
   }
   
   .example-selected-value {
@@ -88,6 +88,6 @@
   
 .buttonNext {
   font-size: 18px;
-  font-family: 'Kanit';
+  font-family: 'Prompt';
 }
   

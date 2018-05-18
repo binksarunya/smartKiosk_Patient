@@ -14,7 +14,7 @@ export class BodyComponent implements OnInit {
   public bodypart: Array<string>;
 
   constructor(private body:BodypartService,private rout:Router,private diag:DiagnosisService) {
-    this.img = "assets/pictures/bodyFront.png";
+    this.img = "assets/pictures/bodyFront_1.png";
     this.bodypart = new Array();
   }
 
@@ -58,9 +58,9 @@ export class BodyComponent implements OnInit {
     //console.log(event.type);
     if (event.type == "mouseenter") {
       //console.log("enter");
-      this.img = "assets/pictures/head.png"
+      this.img = "assets/pictures/Head.png"
     } else {
-      this.img = "assets/pictures/bodyFront.png";
+      this.img = "assets/pictures/bodyFront_1.png";
     }
   }
   clickhead(point: string) {
@@ -69,9 +69,9 @@ export class BodyComponent implements OnInit {
   }
   neck(event: MouseEvent) {
     if (event.type == "mouseenter") {
-      this.img = "assets/pictures/neck.png"
+      this.img = "assets/pictures/Neck.png"
     } else {
-      this.img = "assets/pictures/bodyFront.png";
+      this.img = "assets/pictures/bodyFront_1.png";
     }
   }
   clickneck(point: string) {
@@ -80,9 +80,9 @@ export class BodyComponent implements OnInit {
   }
   chest(event: MouseEvent) {
     if (event.type == "mouseenter") {
-      this.img = "assets/pictures/chest.png"
+      this.img = "assets/pictures/Chest.png"
     } else {
-      this.img = "assets/pictures/bodyFront.png";
+      this.img = "assets/pictures/bodyFront_1.png";
     }
   }
   clickchest(point: string) {
@@ -91,9 +91,9 @@ export class BodyComponent implements OnInit {
   }
   abdomen(event: MouseEvent) {
     if (event.type == "mouseenter") {
-      this.img = "assets/pictures/abdomen.png"
+      this.img = "assets/pictures/Abdomen.png"
     } else {
-      this.img = "assets/pictures/bodyFront.png";
+      this.img = "assets/pictures/bodyFront_1.png";
     }
   }
   clickabdomen(point: string) {
@@ -102,9 +102,9 @@ export class BodyComponent implements OnInit {
   }
   panis(event: MouseEvent) {
     if (event.type == "mouseenter") {
-      this.img = "assets/pictures/penis.png"
+      this.img = "assets/pictures/Penis.png"
     } else {
-      this.img = "assets/pictures/bodyFront.png";
+      this.img = "assets/pictures/bodyFront_1.png";
     }
   }
   clickpanis(point: string) {
@@ -113,9 +113,9 @@ export class BodyComponent implements OnInit {
   }
   legtop(event: MouseEvent) {
     if (event.type == "mouseenter") {
-      this.img = "assets/pictures/legTop.png"
+      this.img = "assets/pictures/Thigh.png"
     } else {
-      this.img = "assets/pictures/bodyFront.png";
+      this.img = "assets/pictures/bodyFront_1.png";
     }
   }
   clicklegtop(point: string) {
@@ -124,9 +124,9 @@ export class BodyComponent implements OnInit {
   }
   knee(event: MouseEvent) {
     if (event.type == "mouseenter") {
-      this.img = "assets/pictures/knee.png"
+      this.img = "assets/pictures/Knee.png"
     } else {
-      this.img = "assets/pictures/bodyFront.png";
+      this.img = "assets/pictures/bodyFront_1.png";
     }
   }
   clickknee(point: string) {
@@ -135,9 +135,9 @@ export class BodyComponent implements OnInit {
   }
   shin(event: MouseEvent) {
     if (event.type == "mouseenter") {
-      this.img = "assets/pictures/shin.png"
+      this.img = "assets/pictures/Shin.png"
     } else {
-      this.img = "assets/pictures/bodyFront.png";
+      this.img = "assets/pictures/bodyFront_1.png";
     }
   }
   clickshin(point: string) {
@@ -146,9 +146,9 @@ export class BodyComponent implements OnInit {
   }
   foot(event: MouseEvent) {
     if (event.type == "mouseenter") {
-      this.img = "assets/pictures/foot.png"
+      this.img = "assets/pictures/Foot.png"
     } else {
-      this.img = "assets/pictures/bodyFront.png";
+      this.img = "assets/pictures/bodyFront_1.png";
     }
   }
   clickfoot(point: string) {
@@ -159,7 +159,7 @@ export class BodyComponent implements OnInit {
     if (event.type == "mouseenter") {
       this.img = "assets/pictures/upperArm.png"
     } else {
-      this.img = "assets/pictures/bodyFront.png";
+      this.img = "assets/pictures/bodyFront_1.png";
     }
   }
   clickupperarm(point: string) {
@@ -168,9 +168,9 @@ export class BodyComponent implements OnInit {
   }
   arm(event: MouseEvent) {
     if (event.type == "mouseenter") {
-      this.img = "assets/pictures/arm.png"
+      this.img = "assets/pictures/Arm.png"
     } else {
-      this.img = "assets/pictures/bodyFront.png";
+      this.img = "assets/pictures/bodyFront_1.png";
     }
   }
   clickarm(point: string) {
@@ -181,7 +181,7 @@ export class BodyComponent implements OnInit {
     if (event.type == "mouseenter") {
       this.img = "assets/pictures/hand.png"
     } else {
-      this.img = "assets/pictures/bodyFront.png";
+      this.img = "assets/pictures/bodyFront_1.png";
     }
   }
   clickhand(point: string) {
