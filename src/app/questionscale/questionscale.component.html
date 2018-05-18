@@ -13,10 +13,16 @@
 <div class="loginBox">
     <div id="formContent">
         <h1>level of symptom</h1>
-        <hr>
-        <br>
-        <mat-slider></mat-slider>
+        <mat-radio-group [(ngModel)]="lv">
+            <mat-radio-button value="1">1</mat-radio-button>
+            <mat-radio-button value="2">2</mat-radio-button>
+            <mat-radio-button value="3">3</mat-radio-button>
+            <mat-radio-button value="4">4</mat-radio-button>
+            <mat-radio-button value="5">5</mat-radio-button>
+          </mat-radio-group>
+          <h1>Your level : {{lv}}</h1>
     </div>
+
 
     <button class="buttonNext" mat-raised-button (click)="ok()">ok</button>
 

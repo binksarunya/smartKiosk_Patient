@@ -8,6 +8,7 @@ import { DiagnosisService } from '../services/diagnosis.service';
   styleUrls: ['./questionscale.component.css']
 })
 export class QuestionscaleComponent implements OnInit {
+  public lv:string;
 
   constructor(private router: Router, private diag: DiagnosisService) { }
 
