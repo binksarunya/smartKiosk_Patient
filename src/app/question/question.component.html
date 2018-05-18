@@ -1,18 +1,46 @@
-<!--<div class="background">-->
-<!--
-  <div class="Btn">
-    <mat-card class="cardBox">
-      <h1 class="w3-jumbo">
-        <span class="w3-hide-small">{{number}}.</span>{{showquestion}}</h1>
-      <mat-radio-group class="radio-group" [(ngModel)]="patientanswer" required>
-        <mat-radio-button class="radio-button" *ngFor="let answer2 of answer" [value]="answer2" (click)="click()">
-          {{answer2.answer}}
-        </mat-radio-button>
-      </mat-radio-group>
-    </mat-card>
-    <button mat-raised-button (click)="nextquestion()" disabled="{{btnlock}}">next question</button>
-  </div>-->
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+
+<body>
+  <div class="container">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <div id="formContent">
+          <h1>{{number}}. &nbsp;{{showquestion}}</h1>
+        </div>
+      </div>
+      <div class="panel-body">
+        <br>
+        <mat-radio-group class="radio-group" [(ngModel)]="patientanswer" required>
+          <mat-radio-button class="radio-button" *ngFor="let answer2 of answer" [value]="answer2" (click)="click()">
+            {{answer2.answer}}
+          </mat-radio-button>
+        </mat-radio-group>
+
+        <br>
+        <hr>
+        <div class="next">
+          <button class="buttonNext" mat-raised-button (click)="nextquestion()" disabled="{{btnlock}}">next question</button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+</body>
+
+<!--
 <div class="loginBox">
   <div id="formContent">
     <h1>{{number}}. &nbsp;{{showquestion}}</h1>
@@ -24,6 +52,8 @@
       </mat-radio-button>
     </mat-radio-group>
   </div>
-  <!-- {{patientanswer.answer}} -->
+  <!-- {{patientanswer.answer}} --
   <button class="buttonNext" mat-raised-button (click)="nextquestion()" disabled="{{btnlock}}">next question</button>
 </div>
+
+-->

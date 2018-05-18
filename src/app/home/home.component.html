@@ -15,15 +15,64 @@
   <div class="container">
     <div class="panel panel-info">
       <div class="panel-heading">
-        
-          <div id="formContent">
-            <h1>Confirm if this is correct.</h1>
-          </div>
-        
+        <div id="formContent">
+          <h1>Confirm if this is correct.</h1>
+        </div>
       </div>
       <div class="panel-body">
-        <br>
-        <table style="width:60%">
+        <div class="container">
+          <div class="row">
+            <div class="col1">
+              <table style="width:100%">
+                <tr>
+                  <th></th>
+                  <th></th>
+                </tr>
+
+                <tr>
+                  Identity card: 
+                </tr>
+
+                <tr>
+                  Firstname:
+                </tr>
+
+                <tr>
+                  Lastname: 
+                </tr>
+
+                <tr>
+                  Gender: 
+                </tr>
+              </table>
+            </div>
+            <div class="col">
+                <table style="width:100%">
+                    <tr>
+                      <th></th>
+                      <th></th>
+                    </tr>
+          
+                    <tr>
+                        &nbsp;&nbsp;&nbsp;{{user.ID}}
+                    </tr>
+          
+                    <tr>
+                        &nbsp;&nbsp;&nbsp;{{user.name}}
+                    </tr>
+          
+                    <tr>
+                        &nbsp;&nbsp;&nbsp;{{user.lastname}}
+                    </tr>
+          
+                    <tr>
+                        &nbsp;&nbsp;&nbsp;{{user.gender}}
+                    </tr>
+                  </table>
+            </div>
+          </div>
+        </div>
+        <!--<table style="width:60%">
           <tr>
             <th></th>
             <th></th>
@@ -44,12 +93,17 @@
           <tr>
             Gender : {{user.gender}}
           </tr>
-        </table>
+        </table>-->
 
+        <br>
         <div class="button">
-          <button mat-button class="button button1" (click)="UnCorrec()">Incorrect</button>
+          <!--<button mat-button class="button button1" (click)="UnCorrec()">Incorrect</button>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <button mat-button class="button button2" (click)="Correc()">Correct</button>
+          <button mat-button class="button button2" (click)="Correc()">Correct</button>-->
+          <button type="button" class="btn btn-danger" (click)="UnCorrec()">Incorrect</button>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button type="button" class="btn btn-success" (click)="Correc()">Correct</button>
+
         </div>
 
       </div>
@@ -57,7 +111,7 @@
   </div>
 
 
-<!--
+  <!--
   <div class="loginBox">
     <div id="formContent">
       <h1>Confirm if this is correct.</h1>

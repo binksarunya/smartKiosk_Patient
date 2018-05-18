@@ -3,7 +3,7 @@ h1 {
     font-size: 100px;
     text-align: center;
     margin-top: 5%;
-    color: lightblue;
+    color: #5499C7;
 }
 
 
@@ -46,7 +46,6 @@ h1 {
  .button {
     border: none;
     color: white;
-    padding: 10px 50px;
     font-size: 30px;
     font-family: 'Prompt';
     align-items: center;
@@ -64,5 +63,10 @@ h1 {
   .button2:hover {
     background-color: #33cccc;
     color: white;
+  }
+
+  .btn-success {
+    font-size: 25px;
+    padding: 5px 20px;
   }
   
