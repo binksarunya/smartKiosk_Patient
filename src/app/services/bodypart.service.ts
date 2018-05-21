@@ -14,6 +14,11 @@ export class BodypartService {
   public question: Array<any>;
   public answer :Array<any>;
 
+  //----------------------edit new -------------------//
+  public firstquestion:any;
+  public ans:any;
+  public answerpatient:any;
+
   constructor(private http: Http) {
     this.auth = false;
     this.bodypart = new Array();
@@ -23,12 +28,96 @@ export class BodypartService {
     return this.auth;
   }
 
+  getfirstquestion(id:string): Observable<boolean> {
+    let body = this.bodypart[0];
+    let data: question;
+    data = new question();
+    data.body = body;
+    data.questionid = id;
+    //console.log(data);
+    let url = Connect.getHostUrl() + '/getfirstquestion.php';
+    let header = { headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }) };
+    return this.http.post(url, data, header).map((res: Response) => { return this.regetfirstquestion(res) }).catch((error: any) => {
+      console.log("input ID");
+      return Observable.of(false);
+    });
+
+  }
+  regetfirstquestion(res: Response): boolean {
+    let data = res.json();
+    //console.log(data);
+    if (data.Error == "true") {
+      //console.log(data.Message);
+      return false;
+    } else {
+      //console.log(data.Message);
+      this.firstquestion = data.data[0];
+      //console.log(this.firstquestion);
+      return true;
+    }
+  }
+
+  getnextquestion(id:string): Observable<boolean> {
+    let body = this.bodypart[0];
+    let data: question;
+    data = new question();
+    data.body = body;
+    data.questionid = id;
+    //console.log(data);
+    let url = Connect.getHostUrl() + '/getnextquestion.php';
+    let header = { headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }) };
+    return this.http.post(url, id, header).map((res: Response) => { return this.regetnextquestion(res) }).catch((error: any) => {
+      console.log("input ID");
+      return Observable.of(false);
+    });
+
+  }
+  regetnextquestion(res: Response): boolean {
+    let data = res.json();
+    console.log(data);
+    if (data.Error == "true") {
+      //console.log(data.Message);
+      return false;
+    } else {
+      //console.log(data.Message);
+      this.firstquestion = data.data[0];
+      //console.log(this.firstquestion);
+      return true;
+    }
+  }
+
+  getans(id:string): Observable<boolean> {
+
+    console.log(id);
+    let url = Connect.getHostUrl() + '/getans.php';
+    let header = { headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }) };
+    return this.http.post(url, id, header).map((res: Response) => { return this.regetans(res) }).catch((error: any) => {
+      console.log("input ID");
+      return Observable.of(false);
+    });
+
+  }
+  regetans(res: Response): boolean {
+    let data = res.json();
+    console.log(data);
+    if (data.Error == "true") {
+      //console.log(data.Message);
+      return false;
+    } else {
+      this.ans=data.data2;
+      //console.log(this.ans);
+      // this.firstquestion = data.data[0];
+      //console.log(this.firstquestion);
+      return true;
+    }
+  }
+
   getquestion(lv: number): Observable<boolean> {
     let body = this.bodypart[0];
     let data: question;
     data = new question();
     data.body = body;
-    data.lv = lv;
+    // data.lv = lv;
     //console.log(data);
     let url = Connect.getHostUrl() + '/getquestion.php';
     let header = { headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }) };

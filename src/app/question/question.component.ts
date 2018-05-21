@@ -23,20 +23,26 @@ export class QuestionComponent implements OnInit {
   public loop: number;
 
   public answer: Array<string>;
-  public patientanswer: any;
+  
 
   public symptomanswer: Array<any>;
 
   public checknull :boolean;
 
-
+  //----------------------------new edit -----------///
+  public firstquestion:any;
+  public ans:any;
+  public patientanswer: any;
+  public answerset:Array<any>;
 
   public str;
   constructor(private body: BodypartService, private router: Router, private login: LoginService, private diag: DiagnosisService) {
     this.questionfilter = new Array();
     this.str = this.login.user.name;
     this.lv = 1;
+    this.answerset=new Array();
     this.number = 1;
+    this.answerset
     this.loop = 0;
     this.btnlock = true;
     this.symptomanswer = new Array();
@@ -45,64 +51,97 @@ export class QuestionComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getquestion();
+    //this.getquestion();
+    this.getfirstquestion();
 
   }
   detail() {
     this.router.navigate(['/home']);
 
   }
-
-  nextquestion() {
-    //console.log(this.patientanswer);
-    this.diag.addsymptom(this.patientanswer);
-    this.symptomanswer.push(this.patientanswer);
-
-    this.btnlock = true;
-    if (this.question.length > 0) {
-      this.setquestion();
-    }
-    else if (this.question.length == 0 || this.loop == 2) {
-      this.loop = 0;
-      this.lv++;
-      this.getquestion();
-
-    }
-
-    if (this.lv == 4) {
-      //console.log(this.symptomanswer);
-      if(this.checknull)
-      this.getdisease();
-      this.router.navigate(['/questionscale']);
-    }
-    this.loop++;
-    this.number++;
-
-
-  }
-  setquestion() {
-    this.checknull = true;
-    let ex = Math.floor(Math.random() * Math.floor(this.question.length));
-    this.questionchoice = this.question.splice(ex, 1);
-    this.showquestion = this.questionchoice[0].question;
-    //console.log(this.questionchoice[0]);
-    this.getanswer(this.questionchoice[0].ID);
-  }
-
-  getanswer(questionID: string) {
-    this.body.getanswer(questionID).subscribe(
-      response => {
-
-        if (response == true) {
-          this.answer = this.body.answer;
-
-        } else {
-          this.nextquestion();
-        }
+  getfirstquestion(){
+    this.body.getfirstquestion("admin").subscribe((Response)=>{
+      if(Response==true){
+        this.firstquestion=this.body.firstquestion;
+        //console.log(this.firstquestion);
+        this.getanswerchoice();
       }
-    );
-
+    });
   }
+  getanswerchoice(){
+    this.body.getans(this.firstquestion.ID).subscribe(Response=>{
+      this.ans=this.body.ans;
+    });
+  }
+
+  nextquestion(){
+    this.answerset.push(this.patientanswer);
+    //console.log(this.patientanswer.nextquestionID);
+    this.body.getnextquestion(this.patientanswer.nextquestionID).subscribe(Response=>{
+      //console.log(Response);
+      if(Response==true){
+        this.firstquestion=this.body.firstquestion;
+        //console.log(this.firstquestion);
+        this.number++;
+        this.btnlock=true;
+        this.getanswerchoice();
+      }else{
+        this.body.answerpatient = this.answerset;
+        this.router.navigate(['/questionscale']);
+      }
+    });
+  }
+
+  // nextquestion() {
+  //   //console.log(this.patientanswer);
+  //   this.diag.addsymptom(this.patientanswer);
+  //   this.symptomanswer.push(this.patientanswer);
+
+  //   this.btnlock = true;
+  //   if (this.question.length > 0) {
+  //     this.setquestion();
+  //   }
+  //   else if (this.question.length == 0 || this.loop == 2) {
+  //     this.loop = 0;
+  //     this.lv++;
+  //     this.getquestion();
+
+  //   }
+
+  //   if (this.lv == 4) {
+  //     //console.log(this.symptomanswer);
+  //     if(this.checknull)
+  //     this.getdisease();
+  //     this.router.navigate(['/questionscale']);
+  //   }
+  //   this.loop++;
+  //   this.number++;
+
+
+  // }
+  // setquestion() {
+  //   this.checknull = true;
+  //   let ex = Math.floor(Math.random() * Math.floor(this.question.length));
+  //   this.questionchoice = this.question.splice(ex, 1);
+  //   this.showquestion = this.questionchoice[0].question;
+  //   //console.log(this.questionchoice[0]);
+  //   this.getanswer(this.questionchoice[0].ID);
+  // }
+
+  // getanswer(questionID: string) {
+  //   this.body.getanswer(questionID).subscribe(
+  //     response => {
+
+  //       if (response == true) {
+  //         this.answer = this.body.answer;
+
+  //       } else {
+  //         this.nextquestion();
+  //       }
+  //     }
+  //   );
+
+  // }
   logout() {
     this.router.navigate(['/bodypart']);
     this.login.logout();
@@ -112,34 +151,34 @@ export class QuestionComponent implements OnInit {
 
 
 
-  getquestion() {
-    this.body.getquestion(this.lv).subscribe(
-      response => {
+  // getquestion() {
+  //   this.body.getquestion(this.lv).subscribe(
+  //     response => {
 
-        if (response == true) {
-          this.question = this.body.question;
+  //       if (response == true) {
+  //         this.question = this.body.question;
           
-          this.setquestion();
+  //         this.setquestion();
 
-          this.loop++;
-
-
-        } else {
+  //         this.loop++;
 
 
-          this.lv++;
-          this.getquestion();
-          if (this.lv == 4) {
-            //console.log(this.symptomanswer);
-            if(this.checknull)
-            this.getdisease();
-            this.router.navigate(['/questionscale']);
-          }
-        }
-      }
-    );
+  //       } else {
 
-  }
+
+  //         this.lv++;
+  //         this.getquestion();
+  //         if (this.lv == 4) {
+  //           //console.log(this.symptomanswer);
+  //           if(this.checknull)
+  //           this.getdisease();
+  //           this.router.navigate(['/questionscale']);
+  //         }
+  //       }
+  //     }
+  //   );
+
+  // }
 
 
   click() {
@@ -147,16 +186,16 @@ export class QuestionComponent implements OnInit {
     this.btnlock = false;
 
   }
-  getdisease() {
-    this.diag.getdisease().subscribe(
-      response => {
+  // getdisease() {
+  //   this.diag.getdisease().subscribe(
+  //     response => {
 
-        if (response == true) {
+  //       if (response == true) {
 
-        } else {
+  //       } else {
 
-        }
-      });
-  }
+  //       }
+  //     });
+  // }
 
 }
