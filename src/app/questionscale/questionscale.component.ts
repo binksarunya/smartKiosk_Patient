@@ -19,6 +19,8 @@ export class QuestionscaleComponent implements OnInit {
   ok() {
     this.diag.addqueue().then(Response=>{
       this.diag.todiag(this.body.answerpatient).then(Response=>{
+        const data = Response.json();
+        console.log(data);
         this.router.navigate(['finish']);
       });
       

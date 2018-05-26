@@ -45,7 +45,7 @@ export class BodypartService {
   }
   regetfirstquestion(res: Response): boolean {
     let data = res.json();
-    //console.log(data);
+    console.log(data);
     if (data.Error == "true") {
       //console.log(data.Message);
       return false;
