@@ -20,6 +20,9 @@ export class DiagnosisService {
   private disease: Array<any>;
   private diseasename: Array<string>;
   private diagarr: Array<Diag>
+  
+  //======result========
+  public result:any;
   private diagfordoc: Diagfordoctor;
 
   constructor(private http: Http, private user: LoginService) {
@@ -41,7 +44,13 @@ export class DiagnosisService {
     let header = { headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }) };
     return this.http.post(url,data,header).toPromise();
   }
-
+  addtotable(data:any){
+    this.diagfordoc.patientid = this.user.user.ID;
+    this.diagfordoc.diseasediag = data;
+    let url = Connect.getHostUrl() + '/adddiagtable.php';
+    let header = { headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }) };
+    return this.http.post(url,this.diagfordoc,header).toPromise();
+  }
   // diagnosis() {
   //   console.log("diag");
   //   for (let i = 0; i < this.diseasename.length; i++) {

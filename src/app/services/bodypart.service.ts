@@ -17,7 +17,7 @@ export class BodypartService {
   //----------------------edit new -------------------//
   public firstquestion:any;
   public ans:any;
-  public answerpatient:any;
+  public answerpatient:Array<any>;
 
   constructor(private http: Http) {
     this.auth = false;
@@ -45,7 +45,7 @@ export class BodypartService {
   }
   regetfirstquestion(res: Response): boolean {
     let data = res.json();
-    console.log(data);
+    //console.log(data);
     if (data.Error == "true") {
       //console.log(data.Message);
       return false;
@@ -74,7 +74,7 @@ export class BodypartService {
   }
   regetnextquestion(res: Response): boolean {
     let data = res.json();
-    console.log(data);
+    //console.log(data);
     if (data.Error == "true") {
       //console.log(data.Message);
       return false;
@@ -88,7 +88,7 @@ export class BodypartService {
 
   getans(id:string): Observable<boolean> {
 
-    console.log(id);
+    //console.log(id);
     let url = Connect.getHostUrl() + '/getans.php';
     let header = { headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }) };
     return this.http.post(url, id, header).map((res: Response) => { return this.regetans(res) }).catch((error: any) => {
@@ -99,7 +99,7 @@ export class BodypartService {
   }
   regetans(res: Response): boolean {
     let data = res.json();
-    console.log(data);
+    //console.log(data);
     if (data.Error == "true") {
       //console.log(data.Message);
       return false;
@@ -165,6 +165,7 @@ export class BodypartService {
 
   clear(){
     this.auth=false;
+    this.answerpatient = null;
   }
 
 }

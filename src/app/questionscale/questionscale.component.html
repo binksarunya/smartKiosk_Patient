@@ -13,7 +13,7 @@
 <div class="loginBox">
     <div id="formContent">
         <h1>level of symptom</h1>
-        <mat-radio-group [(ngModel)]="lv">
+        <mat-radio-group [(ngModel)]="lv" (click)="click()">
             <mat-radio-button value="1">1</mat-radio-button>
             <mat-radio-button value="2">2</mat-radio-button>
             <mat-radio-button value="3">3</mat-radio-button>
@@ -24,6 +24,6 @@
     </div>
 
 
-    <button class="buttonNext" mat-raised-button (click)="ok()">ok</button>
+    <button class="buttonNext" mat-raised-button (click)="ok()" disabled="{{checkbtn}}">ok</button>
 
 </div>
