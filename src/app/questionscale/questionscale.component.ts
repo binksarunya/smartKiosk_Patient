@@ -18,6 +18,7 @@ export class QuestionscaleComponent implements OnInit {
 
   ngOnInit() {
     //console.log(this.body.answerpatient)
+    //console.log(this.body.rediagfordoc);
   }
   click() {
     this.checkbtn = false;
@@ -33,12 +34,15 @@ export class QuestionscaleComponent implements OnInit {
           // console.log(this.diag.result);
           this.diag.addtotable(this.diag.result).then(Response => {
             let d = Response.json();
-            console.log(d);
+            //console.log(d);
             this.router.navigate(['finish']);
           });
 
         });
-
+        this.body.senddata().then(Response=>{
+          let res = Response.json();
+          console.log(res);
+        });
       } else {
         this.router.navigate(['finish']);
       }

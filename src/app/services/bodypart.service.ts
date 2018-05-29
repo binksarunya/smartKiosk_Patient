@@ -6,11 +6,14 @@ import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs/Rx';
 import { Connect } from '../models/connect';
 import { question } from '../models/question';
+import { Anssetfordoc } from '../models/anssetfordoc';
+import { LoginService } from '../services/login.service';
 
 @Injectable()
 export class BodypartService {
   public bodypart: Array<any>
   public auth: boolean;
+  //---------------------------------------------------
   public question: Array<any>;
   public answer :Array<any>;
 
@@ -18,10 +21,19 @@ export class BodypartService {
   public firstquestion:any;
   public ans:any;
   public answerpatient:Array<any>;
+  public rediagfordoc:Anssetfordoc;
 
-  constructor(private http: Http) {
+  constructor(private http: Http,private user:LoginService) {
     this.auth = false;
     this.bodypart = new Array();
+    this.rediagfordoc = new Anssetfordoc();
+    // this.rediagfordoc.patientid = this.user.user.ID;
+  }
+  senddata(){
+    this.rediagfordoc.patientid = this.user.user.ID
+    let url = Connect.getHostUrl() + '/savequestionandanswerfordoc.php';
+    let header = { headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }) };
+    return this.http.post(url,this.rediagfordoc,header).toPromise();
   }
 
   isauthen(): boolean {

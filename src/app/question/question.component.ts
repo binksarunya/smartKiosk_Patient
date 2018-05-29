@@ -23,30 +23,32 @@ export class QuestionComponent implements OnInit {
   public loop: number;
 
   public answer: Array<string>;
-  
+
 
   public symptomanswer: Array<any>;
 
-  public checknull :boolean;
+  public checknull: boolean;
 
   //----------------------------new edit -----------///
-  public firstquestion:any;
-  public ans:any;
+  public firstquestion: any;
+  public ans: any;
   public patientanswer: any;
-  public answerset:Array<any>;
+  public answerset: Array<any>;
+  public questionset: Array<any>;
 
   public str;
   constructor(private body: BodypartService, private router: Router, private login: LoginService, private diag: DiagnosisService) {
     this.questionfilter = new Array();
     this.str = this.login.user.name;
     this.lv = 1;
-    this.answerset=new Array();
+    this.answerset = new Array();
     this.number = 1;
     this.answerset
     this.loop = 0;
     this.btnlock = true;
     this.symptomanswer = new Array();
-    this.checknull =false;
+    this.checknull = false;
+    this.questionset = new Array();
 
   }
 
@@ -59,38 +61,51 @@ export class QuestionComponent implements OnInit {
     this.router.navigate(['/home']);
 
   }
-  getfirstquestion(){
-    this.body.getfirstquestion("admin").subscribe((Response)=>{
-      if(Response==true){
-        this.firstquestion=this.body.firstquestion;
+  getfirstquestion() {
+    this.body.getfirstquestion("admin").subscribe((Response) => {
+      if (Response == true) {
+        this.firstquestion = this.body.firstquestion;
         //console.log(this.firstquestion);
         this.getanswerchoice();
       }
     });
   }
-  getanswerchoice(){
-    this.body.getans(this.firstquestion.ID).subscribe(Response=>{
-      this.ans=this.body.ans;
-    });
-  }
-
-  nextquestion(){
-    this.answerset.push(this.patientanswer);
-    //console.log(this.patientanswer.nextquestionID);
-    this.body.getnextquestion(this.patientanswer.nextquestionID).subscribe(Response=>{
-      //console.log(Response);
-      if(Response==true){
-        this.firstquestion=this.body.firstquestion;
-        //console.log(this.firstquestion);
-        this.number++;
-        this.btnlock=true;
-        this.getanswerchoice();
-      }else{
-        this.body.answerpatient = this.answerset;
+  getanswerchoice() {
+    this.body.getans(this.firstquestion.ID).subscribe(Response => {
+      this.ans = this.body.ans;
+      //console.log(this.ans);
+      if (this.ans.length == 0) {
         this.router.navigate(['/questionscale']);
       }
     });
   }
+
+  nextquestion() {
+    if(this.ans.length>0){
+    this.answerset.push(this.patientanswer);
+    this.questionset.push(this.firstquestion);
+    }
+    //console.log(this.patientanswer.nextquestionID);
+    this.body.getnextquestion(this.patientanswer.nextquestionID).subscribe(Response => {
+      //console.log(Response);
+      if (Response == true) {
+        this.firstquestion = this.body.firstquestion;
+        //console.log(this.firstquestion);
+        this.number++;
+        this.btnlock = true;
+        this.getanswerchoice();
+      } else {
+        this.body.answerpatient = this.answerset;
+        this.body.rediagfordoc.ansset = this.answerset;
+        this.body.rediagfordoc.questionset = this.questionset;
+        //this.body.senddata();
+        this.router.navigate(['/questionscale']);
+      }
+    });
+
+  }
+
+
 
   // nextquestion() {
   //   //console.log(this.patientanswer);
@@ -157,7 +172,7 @@ export class QuestionComponent implements OnInit {
 
   //       if (response == true) {
   //         this.question = this.body.question;
-          
+
   //         this.setquestion();
 
   //         this.loop++;

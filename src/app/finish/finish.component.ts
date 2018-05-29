@@ -14,6 +14,7 @@ export class FinishComponent implements OnInit {
   constructor(private body: BodypartService, private router: Router, private login: LoginService,private diag:DiagnosisService) { }
 
   ngOnInit() {
+    //console.log(this.body.rediagfordoc);
   }
   ok(){
     this.diag.clear();
