@@ -84,47 +84,55 @@
 
     </div>
   </div>
-
+  <button type="button" class="btn" (click)="setfalse()" *ngIf="!mainbody">back</button>
 </body>
+<map name="image-map" *ngIf="headpoint">
+  <area target="" alt="head" title="head" coords="30,10,170,70" shape="rect" (mouseenter)="head2($event)" (mouseleave)="head2($event)" (click)="clickhead2('head')">
+  <area target="" alt="earL" title="earL" coords="10,80,50,150" shape="rect" (mouseenter)="ear($event)" (mouseleave)="ear($event)"(click)="clickhead2('ear')">
+  <area target="" alt="earR" title="earR" coords="160,80,200,150" shape="rect" (mouseenter)="ear($event)" (mouseleave)="ear($event)"(click)="clickhead2('ear')">
+  <area target="" alt="eye" title="eye" coords="50,71,150,110" shape="rect" (mouseenter)="eye($event)" (mouseleave)="eye($event)"(click)="clickhead2('eye')">
+  <area target="" alt="nose" title="nose" coords="85,90,120,145" shape="rect" (mouseenter)="nose($event)" (mouseleave)="nose($event)"(click)="clickhead2('nose')">
+  <area target="" alt="mouth" title="mouth" coords="70,135,140,180" shape="rect" (mouseenter)="mouth($event)" (mouseleave)="mouth($event)"(click)="clickhead2('mouth')">
 
+</map>
 
-<map name="image-map">
-  <area target="" alt="head" title="head" coords="120,0,229,103" shape="rect" (mouseenter)="head($event)" (mouseleave)="head($event)"
+<map name="image-map" *ngIf="mainbody">
+  <area target="" alt="head" title="head" coords="70,0,140,50" shape="rect" (mouseenter)="head($event)" (mouseleave)="head($event)"
     (click)="clickhead('head')">
-  <area target="" alt="neck" title="neck" coords="229,139,122,105" shape="rect" (mouseenter)="neck($event)" (mouseleave)="neck($event)"
+  <area target="" alt="neck" title="neck" coords="70,51,140,85" shape="rect" (mouseenter)="neck($event)" (mouseleave)="neck($event)"
     (click)="clickneck('neck')">
-  <area target="" alt="chest" title="chest" coords="260,253,94,139" shape="rect" (mouseenter)="chest($event)" (mouseleave)="chest($event)"
+  <area target="" alt="chest" title="chest" coords="50,86,155,150" shape="rect" (mouseenter)="chest($event)" (mouseleave)="chest($event)"
     (click)="clickchest('chest')">
-  <area target="" alt="abdomen" title="abdomen" coords="254,359,99,253" shape="rect" (mouseenter)="abdomen($event)" (mouseleave)="abdomen($event)"
+  <area target="" alt="abdomen" title="abdomen" coords="50,151,155,210" shape="rect" (mouseenter)="abdomen($event)" (mouseleave)="abdomen($event)"
     (click)="clickabdomen('abdomen')">
-  <area target="" alt="panis" title="panis" coords="103,360,102,372,100,387,175,448,250,384,249,373,246,359" shape="poly" (mouseenter)="panis($event)"
+  <area target="" alt="panis" title="panis" coords="50,211,155,260" shape="rect" (mouseenter)="panis($event)"
     (click)="clickpanis('panis')" (mouseleave)="panis($event)">
-  <area target="" alt="legtopRight" title="legtopRight" coords="250,385,175,448,199,587,252,585,261,496" shape="poly" (mouseenter)="legtop($event)"
+  <area target="" alt="legtopRight" title="legtopRight" coords="110,261,155,350" shape="rect" (mouseenter)="legtop($event)"
     (mouseleave)="legtop($event)" (click)="clicklegtop('legtop')">
-  <area target="" alt="legtopLeft" title="legtopLeft" coords="100,387,175,448,151,592,98,588,90,501" shape="poly" (mouseenter)="legtop($event)"
+  <area target="" alt="legtopLeft" title="legtopLeft" coords="50,261,100,350" shape="rect" (mouseenter)="legtop($event)"
     (mouseleave)="legtop($event)" (click)="clicklegtop('legtop')">
-  <area target="" alt="kneeRight" title="kneeRight" coords="201,586,256,634" shape="rect" (mouseenter)="knee($event)" (mouseleave)="knee($event)"
+  <area target="" alt="kneeRight" title="kneeRight" coords="110,351,155,375" shape="rect" (mouseenter)="knee($event)" (mouseleave)="knee($event)"
     (click)="clickknee('knee')">
-  <area target="" alt="kneeLeft" title="kneeLeft" coords="95,592,150,636" shape="rect" (mouseenter)="knee($event)" (mouseleave)="knee($event)"
+  <area target="" alt="kneeLeft" title="kneeLeft" coords="50,351,100,375" shape="rect" (mouseenter)="knee($event)" (mouseleave)="knee($event)"
     (click)="clickknee('knee')">
-  <area target="" alt="shinLeft" title="shinLeft" coords="95,635,137,635,146,682,142,774,114,774,90,692" shape="poly" (mouseenter)="shin($event)"
+  <area target="" alt="shinLeft" title="shinLeft" coords="110,376,155,455" shape="rect" (mouseenter)="shin($event)"
     (mouseleave)="shin($event)" (click)="clickshin('shin')">
-  <area target="" alt="shinRight" title="shinRight" coords="204,635,261,778" shape="rect" (mouseenter)="shin($event)" (mouseleave)="shin($event)"
+  <area target="" alt="shinRight" title="shinRight" coords="50,376,100,455" shape="rect" (mouseenter)="shin($event)" (mouseleave)="shin($event)"
     (click)="clickshin('shin')">
-  <area target="" alt="footLeft" title="footLeft" coords="105,774,156,864" shape="rect" (mouseenter)="foot($event)" (mouseleave)="foot($event)"
+  <area target="" alt="footLeft" title="footLeft" coords="50,456,100,500" shape="rect" (mouseenter)="foot($event)" (mouseleave)="foot($event)"
     (click)="clickfoot('foot')">
-  <area target="" alt="footRight" title="footRight" coords="195,779,245,864" shape="rect" (mouseenter)="foot($event)" (mouseleave)="foot($event)"
+  <area target="" alt="footRight" title="footRight" coords="110,456,155,500" shape="rect" (mouseenter)="foot($event)" (mouseleave)="foot($event)"
     (click)="clickfoot('foot')">
-  <area target="" alt="upperarmLeft" title="upperarmLeft" coords="91,146,52,158,56,328,92,334,100,301" shape="poly" (mouseenter)="upperarm($event)"
+  <area target="" alt="upperarmLeft" title="upperarmLeft" coords="20,86,49,200" shape="rect" (mouseenter)="upperarm($event)"
     (click)="clickupperarm('upper arm')" (mouseleave)="upperarm($event)">
-  <area target="" alt="upperarmRight" title="upperarmRight" coords="288,156,260,144,254,336,296,331,300,220" shape="poly" (mouseenter)="upperarm($event)"
+  <area target="" alt="upperarmRight" title="upperarmRight" coords="156,86,186,200" shape="rect" (mouseenter)="upperarm($event)"
     (click)="clickupperarm('upperarm')" (mouseleave)="upperarm($event)">
-  <area target="" alt="armLeft" title="armLeft" coords="93,334,90,378,67,453,37,442,44,401,44,364,55,328" shape="poly" (mouseenter)="arm($event)"
+  <area target="" alt="armLeft" title="armLeft" coords="20,201,49,270" shape="rect" (mouseenter)="arm($event)"
     (click)="clickarm('arm')" (mouseleave)="arm($event)">
-  <area target="" alt="armRight" title="armRight" coords="296,332,310,382,313,443,285,447,263,387,258,336" shape="poly" (mouseenter)="arm($event)"
+  <area target="" alt="armRight" title="armRight" coords="156,201,186,270" shape="rect" (mouseenter)="arm($event)"
     (click)="clickarm('arm')" (mouseleave)="arm($event)">
-  <area target="" alt="handLeft" title="handLeft" coords="35,441,66,453,60,536,2,532,0,469" shape="poly" (mouseenter)="hand($event)"
+  <area target="" alt="handLeft" title="handLeft" coords="0,271,49,320" shape="rect" (mouseenter)="hand($event)"
     (click)="clickhand('hand')" (mouseleave)="hand($event)">
-  <area target="" alt="handRight" title="handRight" coords="282,448,315,443,351,473,337,521,321,537,288,519" shape="poly" (mouseenter)="hand($event)"
-    (click)="clickhand('hand')" (mouseleave)="hand($event)">
+  <area target="" alt="handRight" title="handRight" coords="156,271,210,320" shape="rect" (mouseenter)="hand($event)"
+    (click)="clickhand('hand')" (mouseleave)="hand($event)"> 
 </map>

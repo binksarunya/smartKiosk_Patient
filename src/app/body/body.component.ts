@@ -12,10 +12,20 @@ import { DiagnosisService } from '../services/diagnosis.service';
 export class BodyComponent implements OnInit {
   public img: string;
   public bodypart: Array<string>;
+  //---------------------check point
+  public mainbody: boolean;
+  public headpoint: boolean;
+  setfalse() {
+    this.img = "assets/pictures/bodyFront_1.png";
+    this.mainbody = true;
+    this.headpoint = false;
+  }
 
-  constructor(private body:BodypartService,private rout:Router,private diag:DiagnosisService) {
+  constructor(private body: BodypartService, private rout: Router, private diag: DiagnosisService) {
     this.img = "assets/pictures/bodyFront_1.png";
     this.bodypart = new Array();
+    this.mainbody = true;
+    this.headpoint = false;
   }
 
   ngOnInit() {
@@ -44,29 +54,89 @@ export class BodyComponent implements OnInit {
   cancle() {
     this.bodypart = new Array();
   }
-  ok(){
-    if(this.bodypart.length==0){
+  ok() {
+    if (this.bodypart.length == 0) {
       this.bodypart.push("all");
     }
-    this.body.bodypart=this.bodypart;
-    this.body.auth=true;
+    this.body.bodypart = this.bodypart;
+    this.body.auth = true;
     this.diag.setbodypart(this.bodypart[0]);
     this.rout.navigate(['/login']);
   }
-
+  //-------------------------------------------------------------head
   head(event: MouseEvent) {
     //console.log(event.type);
     if (event.type == "mouseenter") {
       //console.log("enter");
-      this.img = "assets/pictures/HeadNew.png"
+      this.img = "assets/pictures/HeadNew.png";
     } else {
       this.img = "assets/pictures/bodyFront_1.png";
     }
   }
   clickhead(point: string) {
     //console.log(point);
+    this.img = "assets/pictures/head.PNG";
+    this.mainbody = false;
+    this.headpoint = true;
+    //this.addpart(point);
+  }
+  head2(event: MouseEvent) {
+    if (event.type == "mouseenter") {
+      //console.log("enter");
+      this.img = "assets/pictures/head.PNG";
+    } else {
+      this.img = "assets/pictures/head.PNG";
+    }
+  }
+  clickhead2(point: string) {
     this.addpart(point);
   }
+  ear(event: MouseEvent) {
+    if (event.type == "mouseenter") {
+      //console.log("enter");
+      this.img = "assets/pictures/ear.png";
+    } else {
+      this.img = "assets/pictures/head.PNG";
+    }
+  }
+  clickear(point: string) {
+    this.addpart(point);
+  }
+  eye(event: MouseEvent) {
+    if (event.type == "mouseenter") {
+      //console.log("enter");
+      this.img = "assets/pictures/Eye.PNG";
+    } else {
+      this.img = "assets/pictures/head.PNG";
+    }
+  }
+  clickeye(point: string) {
+    this.addpart(point);
+  }
+  nose(event: MouseEvent) {
+    if (event.type == "mouseenter") {
+      //console.log("enter");
+      this.img = "assets/pictures/nose.PNG";
+    } else {
+      this.img = "assets/pictures/head.PNG";
+    }
+  }
+  clicknose(point: string) {
+    this.addpart(point);
+  }
+  mouth(event: MouseEvent) {
+    if (event.type == "mouseenter") {
+      //console.log("enter");
+      this.img = "assets/pictures/mouth.PNG";
+    } else {
+      this.img = "assets/pictures/head.PNG";
+    }
+  }
+  clickmouth(point: string) {
+    this.addpart(point);
+  }
+
+  //----------------------------------------------------end nose
   neck(event: MouseEvent) {
     if (event.type == "mouseenter") {
       this.img = "assets/pictures/NeckNew.png"
