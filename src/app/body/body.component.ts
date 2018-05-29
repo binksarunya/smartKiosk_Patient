@@ -83,7 +83,7 @@ export class BodyComponent implements OnInit {
   head2(event: MouseEvent) {
     if (event.type == "mouseenter") {
       //console.log("enter");
-      this.img = "assets/pictures/head.PNG";
+      this.img = "assets/pictures/head2.PNG";
     } else {
       this.img = "assets/pictures/head.PNG";
     }
