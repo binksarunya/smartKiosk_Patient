@@ -67,6 +67,8 @@ export class QuestionComponent implements OnInit {
         this.firstquestion = this.body.firstquestion;
         //console.log(this.firstquestion);
         this.getanswerchoice();
+      }else{
+        this.router.navigate(['/questionscale']);
       }
     });
   }
