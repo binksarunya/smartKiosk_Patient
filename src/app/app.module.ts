@@ -35,6 +35,8 @@ import { AuthService } from './services/auth.service';
 import { BodypartService } from './services/bodypart.service';
 import { AuthBodypartService } from './services/auth-bodypart.service';
 import { DiagnosisService } from './services/diagnosis.service';
+import { WelcomeService } from './services/welcome.service';
+import { AuthWelcomeService } from './services/auth-welcome.service';
 
 import { HomeComponent } from './home/home.component';
 import { BodyComponent } from './body/body.component';
@@ -43,6 +45,7 @@ import { FinishComponent } from './finish/finish.component';
 import { QuestionscaleComponent } from './questionscale/questionscale.component';
 
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 
 @NgModule({
@@ -53,7 +56,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     BodyComponent,
     QuestionComponent,
     FinishComponent,
-    QuestionscaleComponent
+    QuestionscaleComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
@@ -86,6 +90,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     BodypartService,
     AuthBodypartService,
     DiagnosisService,
+    AuthWelcomeService,
+    WelcomeService,
   ],
   bootstrap: [AppComponent]
 })

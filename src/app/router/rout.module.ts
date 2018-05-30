@@ -10,8 +10,10 @@ import { QuestionComponent } from '../question/question.component';
 
 import { AuthService } from '../services/auth.service';
 import { AuthBodypartService } from '../services/auth-bodypart.service';
+import {AuthWelcomeService} from '../services/auth-welcome.service';
 import { FinishComponent } from '../finish/finish.component';
 import { QuestionscaleComponent } from'../questionscale/questionscale.component';
+import { WelcomeComponent } from '../welcome/welcome.component';
 
 const routes: Routes = [
     {
@@ -42,11 +44,16 @@ const routes: Routes = [
     },
     {
       path: 'bodypart',
-      component : BodyComponent
+      component : BodyComponent,
+      canActivate:[AuthWelcomeService]
+    },
+    {
+      path: 'welcome',
+      component: WelcomeComponent,
     },
     {
       path: '',
-      redirectTo: 'bodypart',
+      redirectTo: 'welcome',
       pathMatch: 'full'
     },
   
