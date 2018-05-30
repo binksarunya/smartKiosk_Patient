@@ -58,33 +58,10 @@
         </div>
       </div>
 
-
-
-      <!--
-      <div class="row" *ngFor="let part of bodypart">
-        <div class="col-md-4">
-          <li class="bullet">{{part}}</li>
-          <!--<a  style="color:red" class="delete" (click)="delete(part)">delete</a>--
-        </div>
-        <div class="col-md-8">
-          <!--<button type="button" class="btn btn-outline-info" (click)="delete(part)">x</button>--
-          <a style="color:red" class="delete" (click)="delete(part)">delete</a>
-        </div>
-      </div>
-      <br>
-      <div class="row">
-        <div class="col-md-4">
-          <button type="button" class="btn btn-danger" (click)="cancle()">cancle</button>
-        </div>
-        <div class="col-md-8">
-          <button type="button" class="btn btn-primary" (click)="ok()">ok</button>
-        </div>
-
-      </div>-->
-
     </div>
   </div>
-  <button type="button" class="btn" (click)="setfalse()" *ngIf="!mainbody">back</button>
+  <!--<button type="button" class="backButton" (click)="setfalse()" *ngIf="!mainbody">back</button>-->
+  <button type="button" class="btn btn-info" (click)="setfalse()" *ngIf="!mainbody">Back</button>
 </body>
 <map name="image-map" *ngIf="headpoint">
   <area target="" alt="head" title="head" coords="30,10,170,70" shape="rect" (mouseenter)="head2($event)" (mouseleave)="head2($event)" (click)="clickhead2('head')">

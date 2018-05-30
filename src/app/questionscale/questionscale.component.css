@@ -90,4 +90,18 @@
   font-size: 18px;
   font-family: 'Prompt';
 }
-  
+
+.next {
+  text-align: right;
+}
+
+.panel-info {
+  margin-top: 9%;
+}
+.panel-body {
+  text-align: center;
+}
+.mat-radio-button {
+  font-family: 'Prompt';
+  font-size: 22px;
+}

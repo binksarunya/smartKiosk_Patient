@@ -64,4 +64,9 @@ li.bullet {
   background-color: #EBF5FB;
 }
 
+.btn-info {
+  font-family: 'Prompt';
+  font-size: 18px;
+  margin-left: 4%;
+}
 

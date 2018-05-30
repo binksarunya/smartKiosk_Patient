@@ -9,8 +9,7 @@
     </mat-card>
 </div>-->
 
-
-<div class="loginBox">
+<!--<div class="loginBox">
     <div id="formContent">
         <h1>level of symptom</h1>
         <mat-radio-group [(ngModel)]="lv" (click)="click()">
@@ -26,4 +25,48 @@
 
     <button class="buttonNext" mat-raised-button (click)="ok()" disabled="{{checkbtn}}">ok</button>
 
-</div>
+</div>-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h2>How strong is yur symptom ?</h2>
+            </div>
+            <div class="panel-body">
+                <mat-radio-group [(ngModel)]="lv" (click)="click()">
+                    <mat-radio-button value="1">1</mat-radio-button> &nbsp;&nbsp; &nbsp;&nbsp;
+                    <mat-radio-button value="2">2</mat-radio-button> &nbsp;&nbsp; &nbsp;&nbsp;
+                    <mat-radio-button value="3">3</mat-radio-button> &nbsp;&nbsp; &nbsp;&nbsp;
+                    <mat-radio-button value="4">4</mat-radio-button> &nbsp;&nbsp; &nbsp;&nbsp;
+                    <mat-radio-button value="5">5</mat-radio-button> &nbsp;&nbsp; &nbsp;&nbsp;
+                    <mat-radio-button value="6">6</mat-radio-button> &nbsp;&nbsp; &nbsp;&nbsp;
+                    <mat-radio-button value="7">7</mat-radio-button> &nbsp;&nbsp; &nbsp;&nbsp;
+                    <mat-radio-button value="8">8</mat-radio-button> &nbsp;&nbsp; &nbsp;&nbsp;
+                    <mat-radio-button value="9">9</mat-radio-button> &nbsp;&nbsp; &nbsp;&nbsp;
+                    <mat-radio-button value="10">10</mat-radio-button>
+                </mat-radio-group>
+
+                <br>
+                
+                <hr>
+                <h3>Your level : {{lv}}</h3>
+                <div class="next">
+                    <button class="buttonNext" mat-raised-button (click)="ok()" disabled="{{checkbtn}}">ok</button>
+                </div>
+            </div>
+          
+        </div>
+    </div>
+</body>

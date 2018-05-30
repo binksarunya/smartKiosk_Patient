@@ -1,4 +1,43 @@
-<mat-form-field class="example-full-width">
-  <input matInput placeholder="Dr.name" value="" [(ngModel)]="drname" name="drname">
-</mat-form-field>
-<button mat-button (click)="click()">Click me!</button>
+<div class="home-page" style="background-color:rgba(245, 241, 241, 0.493);">
+
+  <img class="img" src="/assets/picture/LOGO.png" />
+
+  <div class="loginBox">
+    <div class="formContent">
+
+      <!-- Remind Passowrd -->
+      <div class="Footer">
+        <br>
+        <br>
+        <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Please select doctor" value="" [(ngModel)]="drname" name="drname">
+            </mat-form-field>
+          </td>
+        <br>
+        <br>
+      
+        <input type="submit" name="" value="START" (click)="click()">
+
+      </div>
+
+
+    </div>
+  </div>
+
+</div>
+
+<!--<section class="home-page">
+  <div class="container">
+    <div class="row">
+      
+    <div class="col-12">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Dr.name" value="" [(ngModel)]="drname" name="drname">
+      </mat-form-field>
+      <button mat-button (click)="click()">Click me!</button>
+    </div>
+    </div>
+  </div>
+
+</section>-->
