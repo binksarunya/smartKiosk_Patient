@@ -1,4 +1,10 @@
 
+/*.col-12 {
+text-align: center;
+
+}*/
+
+
 .example-form {
   min-width: 150px;
   max-width: 500px;
@@ -11,8 +17,10 @@
 }
 
 .example-full-width {
-  width: 100%;
+  width: 350px;
   margin-bottom: 0px;
+  font-family: 'Prompt';
+  font-size: 18px;
 }
 
 .frame {
@@ -30,16 +38,26 @@ img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top:80px;
-    width: 50%;
+    margin-top: 70px;
+    width: 300px;
     max-width: 20%;
+    padding-top: 2%;
+    padding-bottom: 0%;
+
+}
+
+h1 {
+    color: black;
+    font-size: 100px;
+    font-family: 'Prompt';
+    text-align: center;
 }
 
 h2 {
     margin: 0;
     padding: 0 0 20px;
     color: #262626;
-    font-family: 'Prompt';
+    font-family: 'Kanit';
     text-align: center;
 }
 
@@ -49,7 +67,7 @@ h2 {
     display: block;
     align-items: center;
     width: 37%;
-    padding: 60px;
+    padding-bottom: 4%;
     margin: 0 auto;
   }
 
@@ -92,13 +110,14 @@ h2 {
     border: none;
     outline: none;
     height: 40px;
-    width: 100%;
-    font-size: 20px;
-    background: #ed292a;
+    width: 70%;
+    font-size: 24px;
+    background: #06899b;
     color: #fff;
-    border-radius: 20px;
+    border-radius: 10px;
     cursor: pointer;
-    font-family: 'Kanit';
+    font-family: 'Prompt';
+    
   }
 
   .loginBox input:hover {opacity: 0.8}
@@ -118,10 +137,12 @@ h2 {
 .Footer {
   text-align: -webkit-center;
   text-align: -moz-center;
-  font-family: 'Prompt';
-  font-size: 18px;
 }
   
+.bt_register {
+  font-family: 'Kanit';
+  font-size: 18px;
+}
 
  
   

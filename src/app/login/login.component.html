@@ -1,4 +1,48 @@
-<meta charset="UTF-8">
+<div class="home-page" style="background-color:rgba(245, 241, 241, 0.493);">
+
+  <img class="img" src="/assets/picture/LOGO.png" />
+
+  <div class="loginBox">
+    <div class="formContent">
+      <div class="Footer">
+        <form class="example-form">
+          <tr>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Identity card" value="" [(ngModel)]="user.id" name="user.id">
+            </mat-form-field>
+          </tr>
+
+          <br>
+          <br>
+        </form>
+        <font color="red">{{warn}}</font>
+        <input type="submit" value="LOG IN" (click)="login()">
+      </div>
+
+
+    </div>
+  </div>
+
+</div>
+
+
+<!--<section class="home-page">
+  <div class="container">
+    <div class="row">
+      
+    <div class="col-12">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Dr.name" value="" [(ngModel)]="drname" name="drname">
+      </mat-form-field>
+      <button mat-button (click)="click()">Click me!</button>
+    </div>
+    </div>
+  </div>
+
+</section>-->
+
+
+<!--<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
@@ -35,8 +79,8 @@
           <a href="#">Forgot Password </a>
         </td>
 
-      </div>-->
+      </div>--
 
     </div>
   </div>
-</div>
+</div>-->
