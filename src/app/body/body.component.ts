@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BodypartService } from '../services/bodypart.service';
 import { Router } from '@angular/router';
 import { DiagnosisService } from '../services/diagnosis.service';
+import { WelcomeService } from '../services/welcome.service';
 
 
 @Component({
@@ -21,7 +22,7 @@ export class BodyComponent implements OnInit {
     this.headpoint = false;
   }
 
-  constructor(private body: BodypartService, private rout: Router, private diag: DiagnosisService) {
+  constructor(private body: BodypartService, private rout: Router, private diag: DiagnosisService,private wel:WelcomeService) {
     this.img = "assets/pictures/bodyFront_1.png";
     this.bodypart = new Array();
     this.mainbody = true;
@@ -53,6 +54,8 @@ export class BodyComponent implements OnInit {
   }
   cancle() {
     this.bodypart = new Array();
+    this.wel.clear();
+    this.rout.navigate(['/welcome']);
   }
   ok() {
     if (this.bodypart.length == 0) {
