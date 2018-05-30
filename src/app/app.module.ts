@@ -21,6 +21,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 
 import { Rout } from './router/rout.module';
@@ -82,7 +83,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
     MatSliderModule,
     HttpModule,
     Ng2SearchPipeModule,
-    Rout
+    Rout,
+    MatAutocompleteModule,
   ],
   providers: [
     LoginService,

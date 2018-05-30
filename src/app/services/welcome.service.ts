@@ -9,6 +9,7 @@ import { Connect } from '../models/connect';
 @Injectable()
 export class WelcomeService {
   public auth: boolean;
+  public docname:string;
 
   constructor(private http: Http) {
     this.auth = false;
@@ -18,11 +19,19 @@ export class WelcomeService {
     return this.auth;
   }
 
+  getdocname() {
+    // console.log(data);
+    let url = Connect.getHostUrl() + '/getdoctor.php'
+    let header = { headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }) };
+    return this.http.get(url, header).toPromise();
+  }
+
 
 
 
   clear() {
     this.auth = false;
+    this.docname = null;
     // this.answerpatient = null;
   }
 

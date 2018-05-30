@@ -9,7 +9,9 @@ import { question } from '../models/question';
 import { Disease } from '../models/disease';
 import { Diag } from '../models/diag';
 import { Diagfordoctor } from '../models/diagfordoctor';
+import { Addqueue } from '../models/addqueue';
 import { LoginService } from '../services/login.service';
+import { WelcomeService } from '../services/welcome.service';
 
 
 @Injectable()
@@ -25,7 +27,7 @@ export class DiagnosisService {
   public result:any;
   private diagfordoc: Diagfordoctor;
 
-  constructor(private http: Http, private user: LoginService) {
+  constructor(private http: Http, private user: LoginService,private wel:WelcomeService) {
     this.symptom = new Array();
     this.disease = new Array();
     this.diseasename = new Array();
@@ -34,9 +36,12 @@ export class DiagnosisService {
   }
 
   addqueue(){
+    let que:Addqueue = new Addqueue();
+    que.ID = this.user.user.ID;
+    que.Dr = this.wel.docname;
     let url = Connect.getHostUrl() + '/adqueue.php';
     let header = { headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }) };
-    return this.http.post(url,this.user.user.ID,header).toPromise();
+    return this.http.post(url,que,header).toPromise();
   }
 
   todiag(data:any){
